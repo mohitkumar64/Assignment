@@ -1,0 +1,85 @@
+.body-r{
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 249, 250);
+  padding: 16px;
+}
+
+.main-section-r{
+  width: 100%;
+  max-width: 500px;
+}
+
+.Heading-r{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.Heading-r h1{
+  font-size: 36px;
+  font-weight: 700;
+  color: rgb(38, 100, 235);
+}
+
+.Heading-r p{
+  font-size: 14px;
+}
+
+.form-r{
+  background: white;
+  padding: 28px;
+  border-radius: 8px;
+  border: 1px solid rgb(213,211,211);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1);
+}
+
+.fix-mr{
+  margin-top: 1.2rem;
+}
+
+.input-r input,
+.select-r{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(156,157,159);
+  outline: none;
+}
+
+.input-r input:focus,
+.select-r:focus{
+  border-color: rgb(38,100,235);
+}
+
+.register-btn{
+  margin-top: 1.5rem;
+  width: 100%;
+  background: rgb(38,100,235);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.register-btn:hover{
+  background: rgb(28,78,217);
+}
+
+.already{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.already a{
+  color: rgb(38,100,235);
+  font-weight: 500;
+}
+
+@media (max-width: 640px){
+  .Heading-r h1{
+    font-size: 28px;
+  }
+}

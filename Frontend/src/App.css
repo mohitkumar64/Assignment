@@ -1,0 +1,14 @@
+
+.scrollbar-hide {
+  
+  scrollbar-width: none;      
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;              
+}
+
+.heading{
+   /* font-family: "Lora", serif; */
+   font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+}

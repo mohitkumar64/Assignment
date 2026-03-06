@@ -1,0 +1,133 @@
+:root{
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+}
+.body-l{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(247, 249, 250);
+
+
+}
+
+.Heading-l{
+    margin-bottom: 3rem;
+}
+.Heading-l h1{
+    font-size: 45px;
+    font-weight: 700;
+    color: rgb(38, 100, 235);
+    text-align: center;
+}
+
+.Heading-l p{
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.form-l{
+    width: 100%;
+    max-width: 500px;
+    background-color: rgb(255, 255, 255);
+    height: 420px;
+    display: flex;
+    padding: 32px 40px;
+    border-radius: 8px;
+    box-shadow: var(--tw-shadow);
+    border-color: rgb(213, 211, 211);
+    border-width: 1px;
+    
+
+}
+
+
+.input-1{
+    border-color: rgb(156, 157, 159);
+    border-width: 1px;
+
+    border-radius: 5px;
+    padding: 8px;
+   
+
+    transition: all 0.3s ease;
+}
+.input-1:focus{
+    border-color: skyblue;
+}
+.input-1 input{
+    padding-left: 10px;
+    padding-right: 20px;
+  
+    width: 350px;
+    border: transparent;
+    outline: none;
+}
+.fix-ml{
+    margin-top: 1.5rem;
+}
+.input-1 i{
+    color: rgb(157, 164, 176);
+}
+.forgot-l{
+    display: block;
+    margin-top: 10px;
+    text-align: end;    
+    text-decoration: none;
+    color: rgb(38, 100, 235);
+
+    font-weight: 600;
+}
+
+.sign-in-btn{
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: rgb(38, 100, 235);
+    padding: 6px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition:  all 0.3s ease;
+}
+.sign-in-btn:hover{
+    background-color: rgb(28, 78, 217);
+}
+.dont-have{
+    margin-top: 1rem;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+}
+.dont-have a{
+    color: rgb(38, 100, 235) ;
+    font-weight: 500;
+    transition:  all 0.3s ease;
+}
+
+.dont-have a:hover{
+    color: rgb(28, 78, 217);
+}
+
+@media (max-width: 640px) {
+    .body-l{
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .Heading-l h1{
+        font-size: 32px;
+    }
+
+    .form-l{
+        padding: 24px 20px;
+        height: auto;
+    }
+    .input-1 input{
+  
+  
+    width: 100%;}
+    
+}

@@ -1,160 +1,178 @@
-# Appointment Management Backend API
+Appointment Management Backend API
+Overview
 
-## Overview
+This project is an Appointment Management System built using Node.js, Express, and MongoDB.
+The main focus of this project is backend API development, while the frontend provides a basic interface to interact with the APIs.
 
-This project is an **Appointment Management system** built using **Node.js, Express, and MongoDB**.
-The main focus of the project is the **backend architecture and API development**, while the frontend provides a **basic UI** to interact with the APIs.
+The system allows users to register, authenticate, and submit appointment requests.
+Administrators can manage users and monitor appointment queries.
 
-The system allows users to register, authenticate, and book appointments, while administrators can manage users and view submitted appointment requests.
+The backend exposes REST APIs that can be consumed by the frontend or any external API client.
 
-The backend exposes REST APIs that can be used by the provided UI or any external client application.
+Tech Stack
 
+Node.js
 
-## Tech Stack
+Express.js
 
-* Node.js
-* Express.js
-* MongoDB (Mongoose)
-* JWT Authentication
-* bcrypt (password hashing)
-* Cookie-based authentication
-* React.js
+MongoDB (Mongoose)
 
----
+JWT Authentication
 
-## Features
+bcrypt (Password Hashing)
 
-* User authentication (login/register)
-* Secure password hashing using bcrypt
-* JWT-based authentication
-* Admin APIs for managing users
-* Admin APIs for viewing and deleting submitted queries
-* Cookie authentication support
-* RESTful API structure
-* student and teacher role for appointment
+Cookie-based Authentication
 
----
+React.js (Basic UI)
 
-## Project Structure
+Features
 
-Back-end/
+User authentication (Register / Login / Logout)
+
+Secure password hashing using bcrypt
+
+JWT-based authentication
+
+Cookie-based authentication
+
+Role-based access control
+
+Appointment query submission
+
+Admin APIs for managing users
+
+Admin APIs for viewing and deleting queries
+
+RESTful API structure
+
+Role-Based Access
+
+The system supports three types of user roles:
+
+Admin
+
+Admin users have elevated permissions and can:
+
+View all registered users
+
+View all submitted appointment queries
+
+Delete queries when required
+
+Manage system data
+
+Teacher
+
+Teachers can:
+
+Login to the system
+
+View appointment requests submitted to them
+
+Respond or manage appointment requests
+
+Student
+
+Students can:
+
+Register and login
+
+Submit appointment requests
+
+View their own submitted queries
+
+Maintain there Profile 
+
+Role-based access is implemented using middleware that checks the user role before allowing access to protected routes.
+
+Project Structure
+Assignment/
 │
-├── controllers
-├── routes
-├── models
-├── middleware
-├── config
-├── server.js
-├── package.json
-├── README.md
-└── .env.example
-
-Frontend/
-|
-├── adminPanel
-├──Appointment Page
-├──Dashboard
-
-
----
-
-## Installation
-
+├── Back-end/
+│   ├── controllers
+│   ├── routes
+│   ├── models
+│   ├── middleware
+│   ├── config
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+│
+├── Frontend/
+│   ├── adminPanel
+│   ├── AppointmentPage
+│   └── Dashboard
+Installation
 Clone the repository
-
 git clone https://github.com/mohitkumar64/Assignment.git
 
 Move into the project folder
 
 cd Assignment
+Backend Setup
 
+Move to backend directory
 
-move to Back-end
+cd Back-end
 
 Install dependencies
 
-npm install 
+npm install
+Environment Variables
 
+Create a .env file or add:
 
----
-
-## Environment Variables
-
-go in .env and put a mongouri
-Monguri=your_mongodb_connection_string
-
----
-
-## Run the Server
+Mongouri=your_mongodb_connection_string
+SECRET=your_secret_key
+Run the Backend Server
 
 Start the development server
 
 npm run dev
 
-or
+Server will run at:
 
 http://localhost:5000
+Frontend Setup
 
----
+Move to frontend folder
 
-
-move to Frontend
+cd Frontend
 
 Install dependencies
 
-npm install 
+npm install
 
-##Run the vite server 
+Run the Vite server
 
 npm run dev
+API Endpoints
+Authentication
+GET    /api/v1/me
+POST   /api/v1/auth/register
+POST   /api/v1/auth/login
+POST   /api/v1/auth/logout
+Admin Routes
+GET      /api/v1/admin/getAllusers
+GET      /api/v1/admin/getquery
+DELETE   /api/v1/admin/deletequery/:id
 
+These routes require Admin role authentication.
 
+API Testing
 
-## API Endpoints
+APIs can be tested using:
 
-### Authentication
+Postman
 
-GET /api/v1/me
-POST /api/v1/auth/register
-POST /api/v1/auth/login
-POST /api/v1/auth/logout
+Thunder Client (VS Code extension)
 
-### Admin Routes
+A Postman Collection containing Admin APIs is included in the repository to simplify testing.
 
-GET /api/v1/admin/getAllusers
-GET /api/v1/admin/getquery
-DELETE /api/v1/admin/deletequery/:id
+Common APIs such as authentication and appointment submission can be tested using the frontend UI or manually through Postman.
 
----
+Because the application uses cookie-based authentication, users must login first to receive the authentication cookie before accessing protected routes.
 
-## API Testing
+Author
 
-You can test the APIs using:
-
-* Postman
-* Thunder Client (VS Code extension)
-
-A Postman collection can be included in the repository for easier testing.
-
----
-
-## Scalability Notes
-
-If the system needs to scale for larger traffic, the following improvements can be implemented:
-
-* Introduce **Redis caching** for frequently accessed data
-* Use **load balancing** (NGINX / cloud load balancers)
-* Split services into **microservices** (auth, users, queries)
-* Use **containerization (Docker)** for easier deployment
-* Implement **rate limiting and monitoring** for security and performance
-
----
-
-## Author
-
-
-
-
-
-
-Mohit kumar
+Mohit Kumar

@@ -1,7 +1,7 @@
 import './loginpage.css';
 import { useState } from 'react';
 import axios from 'axios';
-import Login from '../../Login';
+
 
 export function LoginPage() {
 
@@ -97,10 +97,7 @@ export function LoginPage() {
             </p>
           </form>
            {/* Google login  */}
-        <div className='flex flex-col justify-center items-center bg-[rgb(255,255,255)]  rounded-md w-full    mt-4'>
-          <p>Or</p>
-          <Login />
-        </div>
+       
         </div>
 
        

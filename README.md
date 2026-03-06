@@ -176,7 +176,7 @@ npm run dev
 ```
 
 ---
-
+## Note :- frontend also contain a .env with backhand url if you decide to change the backhand port update it as well
 ## API Endpoints
 
 ### Authentication

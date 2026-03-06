@@ -43,7 +43,7 @@ export function RegisterPage() {
     } catch (err) {
       setError(err.response?.data?.error || 'Registration failed');
       console.log(err);
-      
+
     } finally {
       setLoading(false);
     }
@@ -98,8 +98,22 @@ export function RegisterPage() {
                 />
               </div>
             </div>
+            <div className="fix-mr">
+              <label>Role</label>
+              <div className="input-r">
+                <select
+                  name="role"
+                  value={form.role}
+                  onChange={handleChange}
+                >
+                  <option value="student">student</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+            </div>
 
-            
+
 
             {error && <p className="text-red-600 mt-2">{error}</p>}
 

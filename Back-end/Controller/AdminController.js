@@ -21,11 +21,9 @@ async function getallusers(req ,res) {
 
 async function UpdateUser(req , res) {
    
-    
-    
    const { role , subject} = req.body.value
+   
 
-  
    const data = {
     role ,  TeacherInfo : {
         "Subjects" : subject
@@ -64,7 +62,7 @@ async function getuserdata(req,res) {
     
     res.status(200).json(data)
     } catch (error) {
-        res.status(400);
+        res.status(400).json({error : "cant find the user check the id or user doesnt not exist"});
         console.log(  "error from admin controller" , error);
         
     }

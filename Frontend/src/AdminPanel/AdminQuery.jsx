@@ -22,12 +22,11 @@ function AdminQuery() {
         setSubmittedQueries((prev) =>
       prev.filter((query) => query._id !== id)
         );
-      if(res.data.error){
-        console.log(res.data.error)
-      }
+      
     }
   } catch (error) {
-      console.log(error);
+      alert("error while delting the query")
+      //console.log(error);
       
   } 
    

@@ -11,6 +11,7 @@ const userRouter = require('./Router/UserRoute')
 const adminRouter = require('./Router/AdminRoute')
 const AppointmentRoute = require('./Router/AppointmentRoute')
 const admin = require('./middleware/admin')
+const routehit = require('./middleware/routeHit')
 const allowedOrigins = [
   "http://localhost:5173",
   process.env.FRONTEND_URL
@@ -33,6 +34,7 @@ app.get('/',(req , res)=>{
 })
 app.use(express.json());
 app.use(cookieParser());
+app.use(routehit);
 app.use('/api/v1/', auth , router);
 app.use('/api/user/',userRouter);
 app.use('/auth/' , authRouter);

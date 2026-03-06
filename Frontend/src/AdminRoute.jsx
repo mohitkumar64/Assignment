@@ -14,7 +14,6 @@ export default function AdminRoute() {
  async function getAllUser(){
   try {
     const res = await axios.get(`${API_URL}/api/v1/admin/getAllusers` , {withCredentials : true});
-
     setAllUsers(res.data);
   } catch (error) {
     console.log(error);
@@ -22,19 +21,19 @@ export default function AdminRoute() {
   
   }
 
-  getAllUser();
+ const getQuery = async()=>{
+        const res = await axios.get(`${API_URL}/api/v1/admin/getquery` , {withCredentials : true});
+        setSubmittedQueries(res.data);
+ }
   
   
-useEffect(()=>{
-  const getQuery = async()=>{
-      const res = await axios.get(`${API_URL}/api/v1/admin/getquery` , {withCredentials : true});
-      setSubmittedQueries(res.data);
-      }
-      
-      
+  useEffect(()=>{
+    getAllUser();
+    getQuery() ;
+  },[])
 
-  getQuery();
-},[submittedQueries])
+
+
 
   if (user.role != "Admin"){
     return <Navigate to='/' />;
@@ -43,7 +42,7 @@ useEffect(()=>{
  
   
 
-  return <Outlet context={{  allUsers , submittedQueries , setSubmittedQueries }} />;
+  return <Outlet context={{  allUsers , submittedQueries , setSubmittedQueries  }} />;
 }
 
 
